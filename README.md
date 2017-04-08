@@ -18,7 +18,7 @@ appears only when you need him to scrap your duplicate characters, emblems & wea
 ## How to Run
 1. Download the Jackbot jar with dependencies: [Jackbot-Scrap-Duplicates](https://github.com/TheanosLearning/Jackbot/raw/master/target/Jackbot-Scrap-Duplicates-jar-with-dependencies.jar "Download Jackbot")
 2. Execute the jar with `java -jar Jackbot-Scrap-Duplicates-jar-with-dependencies.jar <username> <password>`
-..* Your _username_ & _password_ are the same credentials you use to sign in on _gearsofwar.com_
+    * Your _username_ & _password_ are the same credentials you use to sign in on _gearsofwar.com_
 3. Sit back and supervise Jackbot's work or go do something better with your time.
 
 #### Compiling Source Code
