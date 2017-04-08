@@ -16,10 +16,10 @@ appears only when you need him to scrap your duplicate characters, emblems & wea
 #### Jackbot works through your web broswer interface on <https://gearsofwar.com> by using Selenium 3 and the Chrome WebDriver to automate the process of scrapping duplicate cards so you don't have to.
 
 ## How to Run
-1) Download the Jackbot jar with dependencies [JackbotJar](https://github.com/TheanosLearning/Jackbot/raw/master/target/Jackbot-Scrap-Duplicates-jar-with-dependencies.jar "Download Jackbot")
-2) Execute the jar with `java -jar Jackbot-Scrap-Duplicates-jar-with-dependencies.jar <username> <password>`
+1. Download the Jackbot jar with dependencies: [JackbotJar](https://github.com/TheanosLearning/Jackbot/raw/master/target/Jackbot-Scrap-Duplicates-jar-with-dependencies.jar "Download Jackbot")
+2. Execute the jar with `java -jar Jackbot-Scrap-Duplicates-jar-with-dependencies.jar <username> <password>`
 ..* _username_ & _password_ are the same credentials you use to sign in on _gearsofwar.com_
-3) Sit back and watch Jackbot go to work or go do something better with your time.
+3. Sit back and supervise Jackbot's work or go do something better with your time.
 
 #### Compiling Source Code
 Use the Maven assembly plugin to compile the jar with `mvn clean compile assembly:single`
