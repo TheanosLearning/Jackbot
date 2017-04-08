@@ -13,8 +13,8 @@ appears only when you need him to scrap your duplicate characters, emblems & wea
 * `Java 8`
 * `Google Chrome` _tested on v57.0 (64 bit)_
 
-#### Jackbot uses Selenium 3 and the Chrome WebDriver to automate the process of scrapping duplicate cards so you don't have to. Jackbot
-works through your web broswer interface on <https://gearsofwar.com>.
+#### Jackbot - uses Selenium 3 and the Chrome WebDriver to automate the process of scrapping duplicate cards so you don't have to.
+#### Jackbot - works through your web broswer interface on <https://gearsofwar.com>.
 
 ## How to Run
 1) Download the Jackbot jar with dependencies [JackbotJar](https://github.com/TheanosLearning/Jackbot/raw/master/target/Jackbot-Scrap-Duplicates-jar-with-dependencies.jar "Download Jackbot")
