@@ -6,7 +6,7 @@
 ![Jackbot](https://github.com/TheanosLearning/Jackbot/raw/master/images/Jackbot.png)
 
 
-Deploy Jackbot onto your Delta team and he will accompany you into battle! Jackbot remains cloaked and
+Deploy [Jackbot](http://gearsofwar.wikia.com/wiki/JACK) onto your Delta team and he will accompany you into battle! Jackbot remains cloaked and
 appears only when you need him to scrap your duplicate characters, emblems & weapon skins.
 
 ### Requirements
