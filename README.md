@@ -1,6 +1,8 @@
 # Jackbot
 
-> "JACK, scrap those duplicates!"
+> "Jack, scrap those duplicates!"
+
+> "Oh shit! Jack is back, baby!"
 
 ![Jackbot](https://github.com/TheanosLearning/Jackbot/raw/master/images/Jackbot.png)
 
@@ -23,4 +25,8 @@ Watch a short [demo](https://www.youtube.com/watch?v=U2nvu6s4HQQ) of Jackbot in 
 
 #### Compiling Source Code
 Use the Maven assembly plugin to compile the jar with `mvn clean compile assembly:single`
+
+![Jackbot-Scan](https://github.com/TheanosLearning/Jackbot/raw/master/images/Jackbot-Scan.png)
+
+> "Jack, scan these cards. Looks like there's some kind of duplicates."
  
