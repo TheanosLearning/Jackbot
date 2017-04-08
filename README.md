@@ -23,7 +23,7 @@ Watch a short [demo](https://www.youtube.com/watch?v=U2nvu6s4HQQ) of Jackbot in 
     * Your _username_ & _password_ are the same credentials you use to sign in on _gearsofwar.com_
 3. Sit back and supervise Jackbot's work or go do something better with your time.
 
-#### Compiling Source Code
+#### Compile the Source Code Yourself (Optional)
 Use the Maven assembly plugin to compile the jar with `mvn clean compile assembly:single`
 
 ![Jackbot-Scan](https://github.com/TheanosLearning/Jackbot/raw/master/images/Jackbot-Scan.png)
