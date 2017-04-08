@@ -1,4 +1,4 @@
-# Jackbot
+# Jackbot v1.0 (beta)
 
 > "Jack, scrap those duplicates!"
 
