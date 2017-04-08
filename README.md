@@ -2,12 +2,12 @@
 
 > "JACK, scrap those duplicates!"
 
-
 ![Jackbot](https://github.com/TheanosLearning/Jackbot/raw/master/images/Jackbot.png)
-
 
 Deploy [Jackbot](http://gearsofwar.wikia.com/wiki/JACK) onto your Delta team and he will accompany you into battle! Jackbot remains cloaked and
 appears only when you need him to scrap your duplicate characters, emblems & weapon skins.
+
+Watch a short [demo](https://www.youtube.com/watch?v=U2nvu6s4HQQ) of Jackbot in action.
 
 ### Requirements
 * `Java 8`

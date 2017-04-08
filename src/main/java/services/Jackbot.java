@@ -10,7 +10,6 @@ import pageobjects.GearsHome;
 import pageobjects.MyCards;
 import pageobjects.OutlookLogin;
 import utils.ArgUtils;
-import utils.WaitUtils;
 
 /**
  * Jackbot scraps all duplicate characters, emblems & weapon skins by default
@@ -36,8 +35,8 @@ public class Jackbot {
     public static void main(String[] args) {
         setUp();
         goToMyCards(args);
-        scrapDuplicates(3);// Characters
-        scrapDuplicates(4);// Emblems
+        //scrapDuplicates(3);// Characters
+        //scrapDuplicates(4);// Emblems
         scrapDuplicates(5);// Weapons
         tearDown();
     }

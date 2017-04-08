@@ -42,6 +42,13 @@ public class MyCards extends PageObject {
     @FindBy(how = How.XPATH, xpath = "//*[@id=\"card-view\"]/div[1]/div[2]/div/div[1]/div/h4")
     private WebElement cardTitle;
 
+    // programmatic variables
+    private boolean doneScrapping = false;
+    private int currentGroup = 1;
+    private int groupDuplicates = 0;
+    private int startIndex = 1;
+    private int nextCardIndex = startIndex + groupDuplicates;
+
     public void selectCardType(int cardType) {
         // refresh page to clear filters
         driver.navigate().refresh();
@@ -73,29 +80,25 @@ public class MyCards extends PageObject {
 
     public void destroyCardDuplicates(int group, int cardIndex) throws UnscrapableDuplicateException {
         String cardXpath = "//*[@id=\"card-list-view\"]/div/div/div[2]/div/div[2]/div/div/div[" + group + "]/div[2]/div/div[" + cardIndex + "]/div/a";
-        // click on `cardIndex` card
-        driver.findElement(By.xpath(cardXpath)).click();
         try {
+            // click on `cardIndex` card
+            driver.findElement(By.xpath(cardXpath)).click();
             WaitUtils.waitUntilElementIsClickable(driver, destroyDuplicates);
             destroyDuplicates.click();
+            WaitUtils.hardWait(50);
             confirm.click();
             WaitUtils.waitUntilElementIsClickable(driver, destroySingle);
         } catch (TimeoutException ex) {
             // assume the TimeoutException is caused by a duplicate card that can't be dusted
             LOG.info("Unable to scrap card: " + cardTitle.getAttribute("innerHTML"));
             throw new UnscrapableDuplicateException("Unable to scrap duplicate card.");
+        } catch(NoSuchElementException exception) {
+            LOG.info("Could not find card " + cardIndex + " in group " + group);
         } finally {
             driver.navigate().back();
             WaitUtils.hardWait(2500);
         }
     }
-
-    // programmatic variables
-    private boolean doneScrapping = false;
-    private int currentGroup = 1;
-    private int groupDuplicates = 0;
-    private int startIndex = 1;
-    private int nextCardIndex = startIndex + groupDuplicates;
 
     public void scrapAllDuplicateCardsOfType(int cardType) {
         selectCardType(cardType);
@@ -107,6 +110,9 @@ public class MyCards extends PageObject {
         while(!doneScrapping) {
             reloadGrouping(currentGroup, cardType);
             scrapCardsGroup(currentGroup, cardType);
+            // renew the page after completing a group so the group index will update
+            selectCardType(cardType);
+            showDuplicates();
         }
         // all duplicate cards of cardType scrapped
     }
@@ -114,15 +120,16 @@ public class MyCards extends PageObject {
     public void scrapCardsGroup(int group, int cardType) {
         String cardsGroupXpath = "//*[@id=\"card-list-view\"]/div/div/div[2]/div/div[2]/div/div/div[" + group + "]/div[2]/div";
         try {
-            while(PageUtils.getNumberOfChildren(driver, cardsGroupXpath) > groupDuplicates) {
+            while(PageUtils.getNumberOfChildren(driver, cardsGroupXpath) >= nextCardIndex) {
                 scrapNextCard(group);
             }
-            currentGroup++;
+            if(groupDuplicates > 0) {
+                currentGroup++;
+            }
             groupDuplicates = 0;
             nextCardIndex = startIndex + groupDuplicates;
         } catch (NoSuchElementException exception) {
-            // we should only get these exceptions when trying to access a group outside the normal bounds
-            // i.e. we have exhausted all groups
+            // we should only get these exceptions when trying to access a group out of bounds
             LOG.info("No more " + cardTypes.get(cardType) + " to scrap.");
             doneScrapping = true;
         }
